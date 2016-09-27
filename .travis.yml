@@ -1,11 +1,17 @@
+# Node.js
 language: node_js
 node_js:
   - 6
   - 5
   - 4
-sudo: true
+sudo: false
+script: 'npm t; curl "http://127.0.0.1:9200"; curl "http://127.0.0.1:9200/phantomas_test/_search"'
 services:
   - elasticsearch
+# fetch newer version
+sudo: required
+before_install:
+  - "curl -O 'https://download.elastic.co/elasticsearch/release/org/elasticsearch/distribution/deb/elasticsearch/2.4.0/elasticsearch-2.4.0.deb' && sudo dpkg -i --force-confnew elasticsearch-2.4.0.deb; sudo service elasticsearch restart"
 # ElasticSearch takes few seconds to start
 before_script:
-  - sleep 5
+  - sleep 2

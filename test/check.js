@@ -42,9 +42,9 @@ describe('elasticsearch', () => {
 
 		client.search({'index': ELASTICSEARCH_INDEX, 'q': 'foo:bar', 'sort': 'reportDate:desc', 'size': 1}, function(err, resp) {
 			assert.ok(err === undefined);
+			console.log(resp);
 
 			var res = resp.hits.hits[0]._source;
-			console.log(res);
 
 			assert.equal(res.url, results.getUrl());
 			assert.equal(res.requests, results.getMetric('requests'));
