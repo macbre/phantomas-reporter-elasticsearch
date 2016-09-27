@@ -18,4 +18,5 @@ before_script:
 # some debug
 after_script:
   - curl "http://127.0.0.1:9200"
+  - curl "http://127.0.0.1:9200/_cat/indices?v"
   - curl "http://127.0.0.1:9200/phantomas_test/_search"
