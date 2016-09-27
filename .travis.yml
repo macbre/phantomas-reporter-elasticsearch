@@ -5,7 +5,7 @@ node_js:
   - 5
   - 4
 sudo: false
-script: 'npm t; curl "http://127.0.0.1:9200"; curl "http://127.0.0.1:9200/phantomas_test/_search"'
+script: 'npm t; curl "http://127.0.0.1:9200"; curl "http://127.0.0.1:9200/phantomas_test/_search"; curl "http://127.0.0.1:9200/_cat/indices?v"'
 # fetch newer version
 sudo: required
 before_install:
