@@ -29,6 +29,7 @@
   },
   "homepage": "https://github.com/macbre/phantomas-reporter-elasticsearch#readme",
   "dependencies": {
+    "debug": "^2.2.0",
     "elasticsearch": "^11.0.1"
   }
 }
