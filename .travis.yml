@@ -1,0 +1,11 @@
+language: node_js
+node_js:
+  - 6
+  - 5
+  - 4
+sudo: true
+services:
+  - elasticsearch
+# ElasticSearch takes few seconds to start
+before_script:
+  - sleep 5
