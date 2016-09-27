@@ -65,7 +65,7 @@ module.exports = function(results, reporterOptions, options) {
 					body: documentBody
 				}, function(error, data) {
 					if (typeof error != "undefined") {
-						debug('Indexing error: %s ', error);
+						throw new Error('Indexing error: ' + error);
 					} else {
 						debug('Stored under id %s', data._id);
 					}
@@ -105,21 +105,18 @@ module.exports = function(results, reporterOptions, options) {
 									if (typeof(err) == "undefined") {
 										indexReport(documentBody);
 									} else {
-										debug('create mapping error: %s ', err);
-										done();
+										throw new Error('Create mapping error: ' + err);
 									}
 								});
 							} else {
-								debug('create index error: %s ', err);
-								done();
+								throw new Error('Create index error: ' + err);
 							}
 						});
 					} else {
 						indexReport(documentBody);
 					}
 				} else {
-					debug('index exists error: %s ', err);
-					done();
+					throw new Error('Index exists check error:' + err);
 				}
 			});
 		}
