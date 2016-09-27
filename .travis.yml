@@ -5,10 +5,10 @@ node_js:
   - 5
   - 4
 
-# fetch newer version
-sudo: required
-before_install:
-  - "curl -O 'https://download.elastic.co/elasticsearch/release/org/elasticsearch/distribution/deb/elasticsearch/2.4.0/elasticsearch-2.4.0.deb' && sudo dpkg -i elasticsearch-2.4.0.deb && sudo service elasticsearch start"
+# ElasticSearch
+# @see https://docs.travis-ci.com/user/database-setup/#ElasticSearch
+services:
+  - elasticsearch # v1.4.0
 
 # ElasticSearch takes few seconds to start
 before_script:
