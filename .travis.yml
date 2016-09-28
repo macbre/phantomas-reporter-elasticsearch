@@ -1,0 +1,22 @@
+# Node.js
+language: node_js
+node_js:
+  - 6
+  - 5
+  - 4
+
+# ElasticSearch
+# @see https://docs.travis-ci.com/user/database-setup/#ElasticSearch
+services:
+  - elasticsearch # v1.4.0
+
+# ElasticSearch takes few seconds to start
+before_script:
+  - sleep 10
+  - curl "http://127.0.0.1:9200"
+
+# some debug
+after_script:
+  - curl "http://127.0.0.1:9200"
+  - curl "http://127.0.0.1:9200/_cat/indices?v"
+  - curl "http://127.0.0.1:9200/phantomas_test/_search"

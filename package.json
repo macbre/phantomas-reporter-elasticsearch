@@ -1,0 +1,38 @@
+{
+  "name": "phantomas-reporter-elasticsearch",
+  "version": "1.0.0",
+  "author": "macbre <maciej.brencz@gmail.com> (http://macbre.net)",
+  "description": "elasticsearch reporter for phantomas",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha -R spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/macbre/phantomas-reporter-elasticsearch.git"
+  },
+  "keywords": [
+    "phantomas",
+    "phantomjs",
+    "reporter",
+    "metrics",
+    "high performance web sites",
+    "monitoring",
+    "web development",
+    "web performance",
+    "webperf",
+    "elasticsearch"
+  ],
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/macbre/phantomas-reporter-elasticsearch/issues"
+  },
+  "homepage": "https://github.com/macbre/phantomas-reporter-elasticsearch#readme",
+  "dependencies": {
+    "debug": "^2.2.0",
+    "elasticsearch": "^11.0.1"
+  },
+  "devDependencies": {
+    "mocha": "^3.1.0"
+  }
+}
