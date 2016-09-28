@@ -28,4 +28,26 @@ $ npm install phantomas-reporter-elasticsearch
 $ DEBUG=phantomas:reporter:elasticsearch ./bin/phantomas.js http://example.com -R elasticsearch
   phantomas:reporter:elasticsearch Parameters: {"host":"localhost:9200","type":"report","index":"phantomas"} +0ms
   phantomas:reporter:elasticsearch Stored under id AVdx20wbKV-iX4VpGWoL +611ms
+  
+$ curl -s http://127.0.0.1:9200/phantomas/report/AVdx20wbKV-iX4VpGWoL | jsonlint
+{
+  "_index": "phantomas",
+  "_type": "report",
+  "_id": "AVdx20wbKV-iX4VpGWoL",
+  "_version": 1,
+  "found": true,
+  "_source": {
+    "url": "http://example.com/",
+    "reportDate": "2016-09-28T17:32:59.758Z",
+    "requests": 1,
+    "gzipRequests": 1,
+    "postRequests": 0,
+    "httpsRequests": 0,
+    "notFound": 0,
+    "bodySize": 1270,
+    "contentLength": 1270,
+    "httpTrafficCompleted": 271,
+    "timeToFirstByte": 268,
+...
+}
 ```
