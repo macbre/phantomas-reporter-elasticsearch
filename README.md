@@ -20,3 +20,12 @@ $ phantomas http://app.net/start -R elasticsearch:es.app.net::app:phantomas_metr
 ```
 
 > Note: as `<port>` option was skipped a default value will be used (`9200`).
+
+## Debugging
+
+```
+$ npm install phantomas-reporter-elasticsearch
+$ DEBUG=phantomas:reporter:elasticsearch ./bin/phantomas.js http://example.com -R elasticsearch
+  phantomas:reporter:elasticsearch Parameters: {"host":"localhost:9200","type":"report","index":"phantomas"} +0ms
+  phantomas:reporter:elasticsearch Stored under id AVdx20wbKV-iX4VpGWoL +611ms
+```
