@@ -65,11 +65,11 @@ module.exports = function(results, reporterOptions, options) {
 					body: documentBody
 				}, function(error, data) {
 					if (typeof error != "undefined") {
-						throw new Error('Indexing error: ' + error);
+						done(new Error('Indexing error: ' + error));
 					} else {
 						debug('Stored under id %s', data._id);
 					}
-					done();
+					done(undefined, {id: data._id});
 				});
 			}
 
@@ -101,22 +101,22 @@ module.exports = function(results, reporterOptions, options) {
 									type: params.type,
 									index: params.index,
 									body: mapping
-								}, function(err) {
-									if (typeof(err) == "undefined") {
+								}, function(err, data) {
+									if (typeof err == "undefined") {
 										indexReport(documentBody);
 									} else {
-										throw new Error('Create mapping error: ' + err);
+										done(new Error('Create mapping error: ' + err));
 									}
 								});
 							} else {
-								throw new Error('Create index error: ' + err);
+								done(new Error('Create index error: ' + err));
 							}
 						});
 					} else {
 						indexReport(documentBody);
 					}
 				} else {
-					throw new Error('Index exists check error:' + err);
+					done(new Error('Index exists check error:' + err));
 				}
 			});
 		}
