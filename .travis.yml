@@ -1,6 +1,8 @@
 # Node.js
 language: node_js
 node_js:
+  - 8
+  - 7
   - 6
   - 5
   - 4
@@ -8,7 +10,7 @@ node_js:
 # ElasticSearch
 # @see https://docs.travis-ci.com/user/database-setup/#ElasticSearch
 services:
-  - elasticsearch # v1.4.0
+  - elasticsearch # v5.5.0
 
 # ElasticSearch takes few seconds to start
 before_script:
