@@ -1,6 +1,6 @@
 {
   "name": "phantomas-reporter-elasticsearch",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "macbre <maciej.brencz@gmail.com> (http://macbre.net)",
   "description": "elasticsearch reporter for phantomas",
   "main": "index.js",
