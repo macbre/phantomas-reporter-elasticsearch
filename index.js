@@ -40,8 +40,7 @@ module.exports = function(results, reporterOptions, options) {
 		render: function(done) {
 			var elasticsearch = require('elasticsearch'),
 				client = new elasticsearch.Client({
-					host: params.host,
-					log: 'trace'
+					host: params.host
 				}),
 				metrics = results.getMetricsNames(),
 				documentBody = {
