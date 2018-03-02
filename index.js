@@ -49,8 +49,8 @@ module.exports = function(results, reporterOptions, options) {
 				},
 				mappingFields = {
 					url: {
-						type: 'string',
-						index: 'not_analyzed'
+						type: 'text',
+						index: false
 					},
 					reportDate: {
 						type: 'date'
@@ -58,10 +58,9 @@ module.exports = function(results, reporterOptions, options) {
 				};
 			// create and index an elasticsearch document with metrics data
 			function indexReport(documentBody) {
-				client.create({
+				client.index({
 					index: params.index,
-					type: params.type,
-					id: '',
+					type: params.type,					
 					body: documentBody
 				}, function(error, data) {
 					if (typeof error != "undefined") {
