@@ -49,8 +49,8 @@ module.exports = function(results, reporterOptions, options) {
 				},
 				mappingFields = {
 					url: {
-						type: 'text',
-						index: false
+						type: 'keyword',
+						index: true
 					},
 					reportDate: {
 						type: 'date'
