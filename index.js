@@ -78,7 +78,7 @@ module.exports = function(results, reporterOptions, options) {
 				documentBody[metric] = value;
 
 				mappingFields[metric] = {
-					type: (isNaN(value) ? 'string' : 'integer')
+					type: (isNaN(value) ? 'text' : 'integer')
 				};
 			});
 
