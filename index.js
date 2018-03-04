@@ -42,7 +42,8 @@ module.exports = function (results, reporterOptions, options) {
 
                 var elasticsearch = require('elasticsearch'),
                     client = new elasticsearch.Client({
-                        host: params.host
+                        host: params.host,
+                        log: 'trace'
                     }),
                     metrics = results.getMetricsNames(),
                     documentBody = {
@@ -59,8 +60,7 @@ module.exports = function (results, reporterOptions, options) {
                             type: 'date'
                         },
                         from: {
-                            type: 'keyword',
-                            index: true
+                            type: 'ip'
                         }
                     };
 
