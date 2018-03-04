@@ -49,8 +49,8 @@ module.exports = function(results, reporterOptions, options) {
 				},
 				mappingFields = {
 					url: {
-						type: 'text',
-						index: false
+						type: 'keyword',
+						index: true
 					},
 					reportDate: {
 						type: 'date'
@@ -78,7 +78,7 @@ module.exports = function(results, reporterOptions, options) {
 				documentBody[metric] = value;
 
 				mappingFields[metric] = {
-					type: (isNaN(value) ? 'string' : 'integer')
+					type: (isNaN(value) ? 'text' : 'integer')
 				};
 			});
 
