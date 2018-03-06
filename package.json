@@ -30,8 +30,7 @@
   "homepage": "https://github.com/macbre/phantomas-reporter-elasticsearch#readme",
   "dependencies": {
     "debug": "^2.2.0",
-    "elasticsearch": "^14.1.0",
-    "public-ip": "^2.4.0"
+    "elasticsearch": "^14.1.0"
   },
   "devDependencies": {
     "mocha": "^3.1.0"
