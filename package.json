@@ -33,6 +33,6 @@
     "elasticsearch": "^15.0.0"
   },
   "devDependencies": {
-    "mocha": "^3.1.0"
+    "mocha": "^10.2.0"
   }
 }
